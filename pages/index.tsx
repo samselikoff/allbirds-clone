@@ -1,86 +1,67 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-
-const Home: NextPage = () => {
+// @ts-nocheck
+export default function () {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
+    <div>
+      <header className="fixed inset-x-0 top-0">
+        <p className="py-3 text-xs font-medium text-center text-white bg-yellow-700">
+          We’ve got all sorts of gifts for all sorts of moms. Order by 4/27 for
+          delivery by 5/8. Shop Now.
         </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div className="px-6 bg-white">
+          <div className="relative flex items-center justify-center w-full h-16 px-4 mx-auto">
+            <div className="absolute left-0 flex space-x-9">
+              <NavLink>Men</NavLink>
+              <NavLink>Womens</NavLink>
+              <NavLink>New arrivals</NavLink>
+            </div>
+            <img className="h-[38px]" src="/allbirds-logo.svg" alt="" />
+            <div className="absolute right-0 flex space-x-8">
+              <NavLink>Sustainability</NavLink>
+              <NavLink>Rerun</NavLink>
+              <NavLink>Stores</NavLink>
+            </div>
+          </div>
         </div>
-      </main>
+      </header>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+      <main>
+        <div className="relative flex flex-col items-center h-screen">
+          <img
+            src="/shopping.jpg"
+            alt=""
+            className="absolute z-[-1] h-full w-full object-cover"
+          />
+
+          <div className="flex flex-col items-center justify-center flex-1 pt-72">
+            <h1 className="text-5xl font-bold text-white">
+              Made from Trees. Designed for Sun.
+            </h1>
+            <p className="mt-4 text-lg font-bold text-white">
+              Shop shoes made with light & breezy eucalyptus tree fiber.
+            </p>
+          </div>
+          <div className="py-16 space-x-6">
+            <button className="w-44 rounded-sm bg-white py-4 text-sm font-bold uppercase tracking-[0.15em]">
+              Shop men
+            </button>
+            <button className="w-44 rounded-sm bg-white py-4 text-sm font-bold uppercase tracking-[0.15em]">
+              Shop women
+            </button>
+          </div>
+        </div>
+        <div className="h-screen bg-blue-500"></div>
+      </main>
     </div>
   )
 }
 
-export default Home
+function NavLink({ children }) {
+  return (
+    <a
+      className="text-sm font-semibold text-gray-700 uppercase hover:underline"
+      href=""
+    >
+      {children}
+    </a>
+  )
+}
